@@ -1,23 +1,21 @@
 import CartWidget from "./CartWidget";
+import {Link} from "react-router-dom"
 
-function NavBar(parametro){
-    if(parametro.isHeader===true){
-      return(
+function NavBar()
+  {
+
+    return(
         <nav className="navbar">
-          <a href="#">Catalogo</a>
-          <a href="#">Unete ahora</a>
-          <a href="#">
-            <CartWidget/>
-          </a>
+          <Link to="/category/Figuras">Figuras </Link>
+          <Link to="/category/Coleccionable">Coleccionable</Link>
+          <Link to="/category/Ropa">Ropa </Link>
+          <Link to="/category/Juguete">Juguete</Link>
+          <Link to="/category/Sticker">Sticker</Link>
+          <Link to="/cart"><CartWidget/></Link>
         </nav>  
-    )}
+    )
+  }
 
-    else{
-      return(
-        <nav className="navbar">
-        </nav>
-      )
-    }
-  
-}
+
+
 export default NavBar;
