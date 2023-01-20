@@ -2,17 +2,17 @@ import './App.css';
 import Header from './components/Header';
 import Main from './components/Main';
 import { BrowserRouter } from "react-router-dom";
+import CustomProvider from './components/CustomProvider';
+
 
 function App() {
   return (
-    <>
-<BrowserRouter>
-    <Header/>
-    <Main/>
-</BrowserRouter>
-    
-    
-    </>
+    <CustomProvider>
+      <BrowserRouter>
+        <Header/>
+        <Main/>
+      </BrowserRouter>
+    </CustomProvider>
   );
 }
 

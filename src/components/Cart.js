@@ -1,10 +1,36 @@
-import React from 'react'
+import React,{useState} from 'react'
 
 const Cart = () => {
+  const [nombre, setNombre] = useState("")
+  const [email, setEmail] = useState("")
+  const [usuario, setUsuarios] = useState([])
+  
+  const handleClick = (e)=>{
+    let copia= [...usuario]
+    const usuario ={
+      nombre:nombre,
+      email:email
+    }
+    copia.push(usuario)
+    setUsuarios()
+
+  }
+  const handleChangeName = (e)=>{
+
+
+  }
+  const handleChangeEmail= (e)=>{
+
+
+  }
+
+  
+  
   return (
-    <h1>
-        Aqui deberian estar tus compras pero andamos trabajando en ello :D
-    </h1>
+    
+    <>
+
+    </>
   )
 }
 

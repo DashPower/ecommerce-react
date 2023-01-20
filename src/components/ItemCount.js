@@ -1,10 +1,11 @@
 import {React,useEffect,useState} from 'react'
 
-const ItemCount = ({precio}) => {
+const ItemCount = ({precio,onAdd,stock}) => {
     const [count, setCount] = useState(1)
     const [value, setValue] = useState(precio)
     
     function addCount(){
+      if(count<stock)
         setCount(count + 1)
     }
 
@@ -18,12 +19,16 @@ const ItemCount = ({precio}) => {
         setValue(precio*count)
     },[precio, count])
 
+    const confirmar = ()=>
+    {
+      onAdd(count)
+    }
   return (
     <div className="countbutton">
         <button className='botonescart material-icons' onClick={removeCount}>remove</button>
         <p className='counter'>{count}</p>
         <button className='botonescart material-icons' onClick={addCount}>add</button>
-        <button className='botonescart'>Agregar al carrito</button>
+        <button className='botonescart' onClick={confirmar}>Agregar al carrito</button>
         <p>Total: ${value}</p>
     </div>
   )
