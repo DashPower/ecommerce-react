@@ -1,12 +1,9 @@
 import React from 'react'
 import ItemCount  from "./ItemCount";
-import {useCarrito} from "./CustomProvider"
 
 const ItemDetail = ({item}) => {
-  const {setTotalProducto} = useCarrito()
-  const onAdd = parametro=>{
-    setTotalProducto(parametro)
-  }
+  
+  
 
   if(!item){
     return <h1>Cargando...</h1>
@@ -34,7 +31,7 @@ const ItemDetail = ({item}) => {
             <p>
               ${item.price}
             </p>
-            <ItemCount precio={item.price} onAdd={onAdd} stock={5} />
+            <ItemCount precio={item.price} stock={5} item={item} />
           </div>
       </div>
     </div>
