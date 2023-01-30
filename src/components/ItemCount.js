@@ -6,15 +6,16 @@ const ItemCount = ({precio,stock,item}) => {
     const [value, setValue] = useState(precio)
     const {onAdd,setCarrito,carrito}=useCarrito(0)
     
-    function añadir (count=1,item){
+    function add (count=1,item){
       onAdd(count)
       
-      if(!carrito.some(e=>e.nombre === item.nombre)){
-        setCarrito([...carrito, item]) 
+      if(!carrito.some(e=>e.name === item.name)){ // si no esta dentro del carrito
+        item.cantidad = count // seteamos la cantidad
+        setCarrito([...carrito, item]) // lo añadimos
       }
-      else{
-        carrito.find(e=>e.nombre ===item.nombre).cantidad += count
-        console.log(count)
+      else{ // si ya existe
+        const itemEncontrado = carrito.find(e=>e.name ===item.name)
+        itemEncontrado.cantidad += count
       }
      
     }
@@ -38,7 +39,7 @@ const ItemCount = ({precio,stock,item}) => {
         <p className='counter'>{count}</p>
         <button className='botonescart material-icons' onClick={addCount}>add</button>
         <button className='botonescart' 
-        onClick={()=>{añadir(count,item)}}>Agregar al carrito</button>
+        onClick={()=>{add(count,item)}}>Agregar al carrito</button>
         <p>Total: ${value}</p>
     </div>
   )

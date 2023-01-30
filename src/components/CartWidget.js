@@ -5,8 +5,7 @@ function CartWidget(){
         <>
         <div className="cart">
             <img src="/carritoicon.png" height="50" alt="Carrito"/>
-            <div className="number" id="carrito">{totalProducto}</div>
-            
+            <div className="number" id="carrito">{ totalProducto }</div>
         </div>
         </>
     )

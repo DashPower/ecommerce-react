@@ -189,3 +189,44 @@ text-align: center;
   color: #f54222;
   font-size: 3rem;
 }
+
+.cartItem{
+display: flex;
+background-color:#252525;
+flex-direction: wrap;
+padding: 15px;
+font-size: 1.2em;
+text-align: end;
+color: white;
+transform: scale(0.9);
+}
+
+.cartItem__text{
+  width: 100%;
+  margin-top: 20px;
+  padding-right: 20px;
+  font-weight: 400;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  align-items: end;
+}
+
+.material-symbols-outlined {
+  cursor: pointer;
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+.cursor{
+  cursor: pointer;
+}
+.iconCart{
+  display: flex;
+  gap:20px;
+  color:red;
+
+}

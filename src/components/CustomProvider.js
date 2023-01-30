@@ -2,52 +2,44 @@ import React, { createContext,useContext,useState }  from 'react'
 const contexto= createContext()
 const Provider=contexto.Provider
 
-const addProduct = (producto,cantidad)=>{
-    if(estaEnCarrito()){
-      //[{id:1,titulo:"Pantalon,cantidad:3"}] modificar su cantidad mas no agregar otro producto  si es que esta en el carrito
-    }
-    //if/else
-    //localstorage
-    //setCarrito()
-}
-const removeProduct = (id)=>{}
-const estaEnCarrito = (id) =>{
-   //return true|false
-}
 
 export const useCarrito=()=>{
     return useContext(contexto)
 }
 const CustomProvider = ({children}) => {
-
-  const [carrito,setCarrito]=useState([])
+  const [carrito,setCarrito]=useState([]) // [variable, functionSeteadora]
   const [totalProducto,setTotalProducto]=useState(0)
   const vaciarCarrito =()=>{
   setCarrito([])
+  setTotalProducto(0)
   }
-  const addProduct = (producto,cantidad)=>{
-    if(estaEnCarrito()){
-      //[{id:1,titulo:"Pantalon,cantidad:3"}] modificar su cantidad mas no agregar otro producto  si es que esta en el carrito
-    }
-    //if/else
-    //localstorage
-    //setCarrito()
-}
-const removeProduct = (id)=>{}
-const estaEnCarrito = (id) =>{//return true|false
-}
-const onAdd = (cantidad)=>
-{
-  setTotalProducto(totalProducto+cantidad)
-}
+  
+  const removeProduct = (id)=>{
+    const item = carrito.find(item => id === item.id)
+    setTotalProducto(totalProducto - item.cantidad)
+    item.cantidad = 0
+    const newCart = carrito.filter(item=> id !== item.id)
+    setCarrito([...newCart])
+  }
+  const onAdd = (cantidad)=>
+  {
+    setTotalProducto(totalProducto+cantidad)
+  }
+  const removeTotal = (cantidad)=>{
+    setTotalProducto(totalProducto - cantidad)
+  }
+  
   const valorDelContexto={
-      vaciarCarrito:vaciarCarrito,
-      onAdd:onAdd,
-    carrito:carrito,
-    totalProducto: totalProducto,
-    setCarrito:setCarrito,
-    setTotalProducto:setTotalProducto
+    removeProduct,
+    vaciarCarrito,
+    onAdd,
+    carrito,
+    totalProducto,
+    setCarrito,
+    setTotalProducto,
+    removeTotal
   }
+
   return (
     <Provider value={valorDelContexto}>
         {children}
