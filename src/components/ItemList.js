@@ -1,9 +1,9 @@
 import React from "react"
 import Item from "./Item"
 
-function Items (props) {
+function ItemList (props) {
    return(
-    <div className="cards">
+    <div className="cards" >
         {props.productos.map((item)=>
         {
         return(
@@ -19,4 +19,4 @@ function Items (props) {
    )
 }
 
-export default Items
+export default ItemList

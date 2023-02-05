@@ -1,15 +1,19 @@
 import React from 'react'
 import ItemCount  from "./ItemCount";
+import { Loading } from 'notiflix/build/notiflix-loading-aio';
 
 const ItemDetail = ({item}) => {
   
   
 
   if(!item){
-    return <h1>Cargando...</h1>
+    return Loading.standard("Cargando Productos...")
   }
+  
   return (
+    
     <div className='more'>
+      {Loading.remove(200)}
       <div className='image'>
         <div>
               <img src={item.img} alt={item.nombre} />

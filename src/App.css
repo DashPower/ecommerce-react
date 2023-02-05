@@ -36,11 +36,10 @@ body{
 }
 
 .bienvenida{
-  font-size: 1.1em;
   font-weight: 500;
-  margin-top: 20px;
+  margin-top: 10px;
   text-align:center;
-  height: 100px;
+  height: 80px;
 }
 .bienvenida>p{ 
   color: white;
@@ -52,13 +51,14 @@ body{
   right: 1px;
 }
 .number{
-  font-size: 0.6em;
+  font-size: 0.7em;
   position: absolute;
   top: -5px;
   right: -2px;
-  background-color: red;
+  background-color: white;
   border-radius: 10px;
   padding: 2px;
+  
 }
 
 .cards{
@@ -76,13 +76,10 @@ body{
   text-align: center;
   color: black;
   background-color: aliceblue;
-  transition: 0.5s;
-  font-size: 1.1em;
+  font-size: 1.2em;
   object-fit: scale-down;
 }
-.card:hover{
-  transform: scale(1.05);
-}
+
 .card >img{
   object-fit: cover;
   padding: 20px;
@@ -99,7 +96,7 @@ body{
   font-size: 0.9em;
 }
 .price{
-  font-size: 1.2em !important;
+  font-size: 1.4em !important;
   color:green
 }
 .card>h4{
@@ -122,15 +119,14 @@ body{
 .more{
 display: flex;
 flex-direction: row;
-width: 100%;
 background-color:#252525;
 color: rgba(255, 255, 255, 0.788);
+transform: scale(0.9);
 }
 .image{
   object-fit: contain;
   width: 100%;
   padding: 20px;
-  margin: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -142,17 +138,17 @@ padding-right: 20px;
 justify-content: end;
 align-items: center;
 width: 100%;
+font-size: 1.2em;
 }
 
 .texto{
 display: flex;
 flex-direction: column;
-gap: 20px;
+gap: 10px;
 justify-content: center;
 align-items: center;
 width: 100%;
 text-align: center;
-
 }
 
 .countbutton{
@@ -161,9 +157,12 @@ text-align: center;
   text-align: center;
   justify-content: center;
   align-items: center;
-  gap:20px;
- 
-  height: 60px;
+  gap:10px;
+  flex-wrap: wrap;
+}
+
+.valuetotal{
+  font-size: 1.5em;
 }
 .botonescart{
   display: flex;
@@ -189,28 +188,36 @@ text-align: center;
   color: #f54222;
   font-size: 3rem;
 }
+.cartItem__container{
+  display: flex;
+  gap:20px;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
 
+}
 .cartItem{
 display: flex;
 background-color:#252525;
-flex-direction: wrap;
 padding: 15px;
 font-size: 1.2em;
-text-align: end;
 color: white;
-transform: scale(0.9);
+height: 300px;
+margin-top: 20px;
+gap: 20px;
+border:solid #f542221a;
+width: 40%;
 }
 
 .cartItem__text{
   width: 100%;
-  margin-top: 20px;
+  height: 300px;
   padding-right: 20px;
   font-weight: 400;
   display: flex;
   flex-direction: column;
-  gap: 20px;
   justify-content: center;
-  align-items: end;
+  gap: 20px;
 }
 
 .material-symbols-outlined {
@@ -228,5 +235,48 @@ transform: scale(0.9);
   display: flex;
   gap:20px;
   color:red;
+  justify-content: end;
+}
+.cartItem__img{
+  width: 10em;
+}
+.cartTotal{
+  position: sticky;
+  top:0;
+  z-index: 1;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row-reverse;
+  padding:10px;
+  gap: 15px;
+  font-size: 1.5em;
+  text-align: center;
+  width: 10rem;
+  margin-left: auto;
+  background-color: #A72714;
+  border-top-left-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+}
 
+
+.cleanCart{
+  background-color: white;
+  color:#6d1508;
+  font-size: 1.5em;
+  transition:0.5s;
+  border-radius: 1.2rem;
+  padding: 3px;
+}
+.cleanCart:hover{
+  color: white;
+  background-color:#6d1508;
+}
+.green{
+  color:white
+}
+
+.cartContainer{
+position: relative;
 }

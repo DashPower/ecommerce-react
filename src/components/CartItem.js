@@ -1,5 +1,6 @@
 import { useCarrito } from "./CustomProvider"
-import { useState } from "react"
+import { useState} from "react"
+import { toast } from "react-toastify"
 
 const CartItem = ( { itemCart } ) => {
   const {removeProduct, removeTotal}=useCarrito()
@@ -8,6 +9,7 @@ const CartItem = ( { itemCart } ) => {
     item.cantidad = item.cantidad - 1
     removeTotal(1)
     setResto(!resto)
+    toast.warning("Cantidad Eliminada")
     if(item.cantidad === 0){
       item.cantidad += 1
       removeProduct(itemCart.id)
@@ -15,8 +17,8 @@ const CartItem = ( { itemCart } ) => {
   }
   
   return (
-    <div className='cartItem' key={itemCart.id}>
-        <img src={itemCart.img} alt={itemCart.name} />
+      <div className='cartItem animate__animated animate__fadeInRight animate__fast' key={itemCart.id} id={itemCart.id}>
+        <img className="cartItem__img"src={itemCart.img} alt={itemCart.name} />
         <div className="cartItem__text">
           <h4>{itemCart.name}</h4>
           <p> Categorias: {itemCart.category.map((cat) => {
@@ -24,13 +26,13 @@ const CartItem = ( { itemCart } ) => {
           </p>
           <p>Precio: $ {itemCart.price}</p>
           <p>Cantidad: {itemCart.cantidad}</p>
-          <p>Total Individual: {itemCart.price * itemCart.cantidad}</p>
+          <p>Total Individual: $ {itemCart.price * itemCart.cantidad}</p>
           <div className="iconCart">
             <span className='material-icons cursor' onClick={()=>{restartItem(itemCart)}}>remove</span>
             <span className="material-symbols-outlined" onClick={()=>removeProduct(itemCart.id)}>delete</span>
           </div>
         </div>
-    </div> 
+      </div>
   )
 }
 
