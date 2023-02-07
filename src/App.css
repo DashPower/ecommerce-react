@@ -274,6 +274,8 @@ body {
 }
 .checkCart {
   transition: 0.5s;
+  background-color: unset;
+  border: unset;
 }
 .checkCart:hover {
   color: rgb(0, 255, 0);
@@ -318,19 +320,23 @@ form {
   flex-direction: row;
   background-color: #f9f9f9;
   border-radius: 1em;
+  width: 60%;
+}
+.formText {
   font-size: 1.5em;
 }
 
 input {
   background-color: #f9f9f9;
-  font-size: 1.2em;
+  font-size: 1em;
   width: 100%;
   border: none;
   transition: 0.3s;
   border-bottom: 2px solid #a72714;
 }
-input:focus {
-  border: unset;
+input:focus-visible {
+  outline: unset;
+  border-bottom: 2px solid #a72714;
 }
 .formColumn {
   display: flex;
@@ -339,6 +345,7 @@ input:focus {
   align-items: center;
   gap: 10px;
   padding: 20px;
+  margin-inline: 10px;
 }
 .cartCheckout {
   display: flex;
@@ -368,7 +375,7 @@ input:focus {
 .buttonForm {
   height: 40px;
   margin-top: 10px;
-  width: 15em;
+
   font-size: 1.3em;
   background-color: #a72714;
   color: white;
@@ -379,4 +386,67 @@ input:focus {
 .buttonForm:hover {
   background-color: white;
   color: #a72714;
+}
+
+.lastButtons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20em;
+}
+.checkoutStep {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
+}
+.cartCheckoutStep {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  margin-bottom: 20px;
+  width: 100%;
+}
+.cartViewer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background-color: #f9f9f9;
+  width: 20em;
+  padding: 20px;
+  line-height: 1.5;
+  border-radius: 1em;
+  font-size: 1.3em;
+  flex: wrap;
+}
+
+.fontWeight {
+  font-weight: 800;
+}
+
+.unset {
+  font-weight: 400;
+}
+
+.position {
+  position: absolute;
+  top: 1;
+  right: 0;
+  margin-right: 10px;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  font-weight: 800;
+  transition: 0.5s;
+}
+.position:hover {
+  transform: scale(1.1);
+  border-radius: 20em;
+  background-color: #a72714;
+  color: white;
+  font-weight: 400;
 }
