@@ -40,7 +40,7 @@ const Checkout = () => {
     return (
       <div className="checkoutStep animate__animated animate__fadeInLeft">
         <div className="cartCheckoutStep">
-          <form onSubmit={onSubmit}>
+          <form onSubmit={onSubmit} className="formStep">
             <div className="formColumn">
               <p className="formText">Titular Tarjeta</p>
               <input
@@ -110,7 +110,7 @@ const Checkout = () => {
         </div>
       </div>
       <h1>Ingresa tus datos</h1>
-      <form className="animate__animated animate__fadeInUp">
+      <form className="animate__animated animate__fadeInUp checkoutForm">
         <div className="formColumn">
           <p className="formText">Primer Apellido</p>
           <input
