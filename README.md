@@ -1,70 +1,79 @@
-# Getting Started with Create React App
+# DotaStore
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+DotaStore es un comercio digital que ofrece una amplia variedad productos relacionados al juego MOBA Defense of The Ancient mejor conocido como DOTA. DotaStore es una pagina web creada de tal manera en que el usuario se le haga facil realizar cualquier actividad de compra y de manera intuitiva en el sitio web.
 
-## Available Scripts
+## Características principales:
 
-In the project directory, you can run:
+Catálogo de productos amplio con diferentes figuras,accesorios y coleccionables del juego DOTA.
 
-### `npm start`
+Interfaz de usuario amigable con filtros para encontrar fácilmente el producto deseado.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Proceso de compra seguro y sencillo, con opciones de pago variadas.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+DotaStore siempre esta en constante innovacion e inclusion de productos nuevos y de alta calidad si deseas entrar a nuestra pagina puedes acceder por medio de este enlace [DotaStore](https://ecommerce-react-lovat.vercel.app/)
 
-### `npm test`
+## Uso e instalación:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Asegúrate de tener instaladas las últimas versiones de Node.js y npm en tu computadora.
 
-### `npm run build`
+Clona el repositorio en tu computadora local usando el siguiente comando en la terminal:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```
+$ git clone https://github.com/DashPower/ecommerce-react
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Accede a la carpeta del proyecto clonado:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+$ cd ecommerce-react
+```
 
-### `npm run eject`
+Instala las dependencias necesarias usando npm o yarn:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```
+$ npm install
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+ó
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```
+$ yarn
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Arranca el servidor de desarrollo:
 
-## Learn More
+```
+$ npm start
+```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+ó
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+$ yarn start
+```
 
-### Code Splitting
+Tecnologías utilizadas:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Firebase:
 
-### Analyzing the Bundle Size
+Fue utilizada para la base de datos de la aplicación.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### Firebase admin:
 
-### Making a Progressive Web App
+Es una biblioteca que permite acceder a los servicios de Firebase desde el lado del servidor, es utilizado por los desarrolladores para futuras actualizaciones de catálogo.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Animate.css:
 
-### Advanced Configuration
+Es una biblioteca de animaciones para React que te permite implementar animaciones de alta calidad ya creadas de forma sencilla, se utilizó para algunas animaciones y transiciones.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+### Notiflix:
 
-### Deployment
+Es una biblioteca que permite mostrar notificaciones personalizables y elegantes en tu aplicación React.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### React router dom:
 
-### `npm run build` fails to minify
+Es una biblioteca que permite la navegación entre componentes de React, fue utilizada para las rutas para la navegación de la página.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### React-toastify:
+
+Es una biblioteca que permite mostrar notificaciones, fue utilizada para mostrar notificaciones para el usuario.
