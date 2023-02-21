@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useCarrito } from "./CustomProvider";
 import { Link, useNavigate } from "react-router-dom";
 import { db } from "./../firebase";
@@ -8,30 +8,35 @@ import { toast } from "react-toastify";
 const Checkout = () => {
   const { carrito, vaciarCarrito } = useCarrito();
   const [steps, setSteps] = useState(false);
-  const [dataForm, setDataForm] = useState({ carrito: carrito });
+  const [dataForm, setDataForm] = useState({ carrito });
   const navigate = useNavigate();
   const onChange = (event) => {
     setDataForm({ ...dataForm, [event.target.name]: event.target.value });
   };
-  const addFecha = () => {
-    const fecha = serverTimestamp();
-    dataForm.fecha = fecha;
-  };
+  useEffect(() => {
+    if (dataForm.fecha) {
+      const comprasCollection = collection(db, "Compras");
+      const compra = dataForm;
+      addDoc(comprasCollection, compra)
+        .then(({ id: docId }) => {
+          toast.success("Compra realizada con exito!");
+          vaciarCarrito();
+          navigate("/");
+          toast.info(`Su ticket de compra es: ` + docId, {
+            autoClose: false,
+          });
+        })
+        .catch(() => {
+          toast.error("La compra no pudo ser realizada");
+        });
+    }
+    // eslint-disable-next-line
+  }, [dataForm]);
+
   const onSubmit = (event) => {
     event.preventDefault();
-    addFecha();
-    const comprasCollection = collection(db, "Compras");
-    const compra = dataForm;
-    addDoc(comprasCollection, compra)
-      .then((docRef) => {
-        toast.success("Compra realizada con exito!");
-        vaciarCarrito();
-        navigate("/");
-        toast.info(`Su ticket de compra es: ` + docRef.id, {
-          autoClose: false,
-        });
-      })
-      .catch();
+    const fecha = serverTimestamp();
+    setDataForm({ ...dataForm, fecha });
   };
   const totalCarrito = carrito
     .map((item) => item.cantidad * item.price)

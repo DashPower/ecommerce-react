@@ -40,15 +40,13 @@ const CustomProvider = ({ children }) => {
     toast.success("Carrito vaciado con exito");
   };
 
-  const removeProduct = (id) => {
+  const removeProduct = (id, cantidad = 1) => {
     const division = document.getElementById(id);
     division.classList.remove("animate__fadeInRight", "animate__fast");
     division.classList.add("animate__fadeOutRight", "animate__faster");
     setTimeout(() => {
       toast.success("Producto Eliminado");
-      const item = carrito.find((item) => id === item.id);
-      setTotalProducto(totalProducto - item.cantidad);
-      item.cantidad = 0;
+      setTotalProducto(totalProducto - cantidad);
       const newCart = carrito.filter((item) => id !== item.id);
       setCarrito([...newCart]);
     }, 550);

@@ -544,3 +544,7 @@ input:focus-visible {
   color: white;
   font-weight: 400;
 }
+
+.display-none {
+  display: none;
+}

@@ -24,8 +24,8 @@ const Cart = () => {
         "Ver Productos",
         () => navigate("/")
       );
-    }
-  }, [carrito, navigate, initCarrito]);
+    } // eslint-disable-next-line
+  }, [carrito, initCarrito]);
 
   return (
     <div className="cartContainer">
