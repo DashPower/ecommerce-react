@@ -54,6 +54,7 @@ const Checkout = () => {
                 onChange={onChange}
                 placeholder="name"
                 autoComplete="off"
+                required
               />
               <p className="formText">Fecha de vencimiento</p>
               <input
@@ -62,6 +63,7 @@ const Checkout = () => {
                 name="vencimiento"
                 placeholder="xx/xx/xxxx"
                 autoComplete="off"
+                required
               />
               <p className="formText">CVC</p>
               <input
@@ -70,6 +72,7 @@ const Checkout = () => {
                 onChange={onChange}
                 placeholder="CVC"
                 autoComplete="off"
+                required
               />
               <p className="formText">Numero de Tarjeta</p>
               <input
@@ -78,6 +81,7 @@ const Checkout = () => {
                 onChange={onChange}
                 placeholder="xxxxx-xxxxxx-xxxxx"
                 autoComplete="off"
+                required
               />
               <div className="lastButtons">
                 <span
@@ -124,6 +128,7 @@ const Checkout = () => {
             onChange={onChange}
             placeholder="Apellido"
             autoComplete="off"
+            required
           />
           <p className="formText">Ciudad</p>
           <input
@@ -132,6 +137,7 @@ const Checkout = () => {
             onChange={onChange}
             placeholder="Ciudad"
             autoComplete="off"
+            required
           />
           <p className="formText">Pais</p>
           <input
@@ -140,6 +146,7 @@ const Checkout = () => {
             onChange={onChange}
             placeholder="Pais"
             autoComplete="off"
+            required
           />
           <p className="formText">Numero de Telefono</p>
           <input
@@ -148,6 +155,7 @@ const Checkout = () => {
             onChange={onChange}
             placeholder="Telefono"
             autoComplete="off"
+            required
           />
           <p className="formText">Email</p>
           <input
@@ -156,6 +164,7 @@ const Checkout = () => {
             onChange={onChange}
             placeholder="example@gmail.com"
             autoComplete="off"
+            required
           />
         </div>
         <img src="/dota2logo.png" alt="pepe" className="imgForm" />
@@ -167,6 +176,7 @@ const Checkout = () => {
             onChange={onChange}
             placeholder="Nombre"
             autoComplete="off"
+            required
           />
           <p className="formText">Codigo postal</p>
           <input
@@ -175,6 +185,7 @@ const Checkout = () => {
             onChange={onChange}
             placeholder="Code"
             autoComplete="off"
+            required
           />
           <p className="formText">Estado</p>
           <input
@@ -183,6 +194,7 @@ const Checkout = () => {
             onChange={onChange}
             placeholder="Estado"
             autoComplete="off"
+            required
           />
           <p className="formText">Direccion</p>
           <input
@@ -191,6 +203,7 @@ const Checkout = () => {
             onChange={onChange}
             placeholder="Direccion"
             autoComplete="off"
+            required
           />
           <span
             onClick={() => setSteps(true)}
